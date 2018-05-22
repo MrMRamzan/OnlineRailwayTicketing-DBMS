@@ -1,0 +1,50 @@
+﻿@model OnlineRailwayReservationSystem.Models.Station
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Station</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainArrivalTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainArrivalTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainDepartureTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainDepartureTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Train.TrainName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Train.TrainName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,83 @@
+﻿@model OnlineRailwayReservationSystem.Models.Route
+
+@{
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Delete Route";
+}
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">@ViewBag.Title</h4>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="white-box">
+                <div>
+                    <h4>Are you sure you want to delete this?</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.RouteSource)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.RouteSource)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.RouteDestination)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.RouteDestination)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TotalDistance)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TotalDistance)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NumberOfStations)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.NumberOfStations)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Train.TrainName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Train.TrainName)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-default" />
+                        </div>
+                    }
+                </div>
+            </div>
+            <span class="btn btn-default">
+                @Html.ActionLink("Back to List", "Index")
+            </span>
+        </div>
+
+    </div>
+    <footer class="footer text-center"> 2018 &copy; E-Ticket </footer>
+</div>

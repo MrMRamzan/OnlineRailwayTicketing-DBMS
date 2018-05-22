@@ -1,0 +1,67 @@
+﻿@model OnlineRailwayReservationSystem.Models.Train
+
+@{
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Delete Train";
+}
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">@ViewBag.Title</h4>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="white-box">
+                <div>
+                    <h4>Are you sure you want to delete this?</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TrainName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TrainName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.AvailableDay)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.AvailableDay)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TotalNumberOfCoach)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TotalNumberOfCoach)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-default" />
+                        </div>
+                    }
+                </div>
+            </div>
+            <span class="btn btn-default">
+                @Html.ActionLink("Back to List", "Index")
+            </span>
+        </div>
+
+    </div>
+    <footer class="footer text-center"> 2018 &copy; E-Ticket </footer>
+</div>

@@ -1,0 +1,108 @@
+﻿@model OnlineRailwayReservationSystem.Models.Ticket
+
+@{
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Delete Ticket";
+}
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">@ViewBag.Title</h4>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="white-box">
+                <div>
+                    <h4>Are you sure you want to delete this?</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.SrcStation)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.SrcStation)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DstStation)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DstStation)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Fare)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Fare)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.AllocatedSeat)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.AllocatedSeat)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.AllocatedBirth)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.AllocatedBirth)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.AdminUser.UserCNIC)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.AdminUser.UserCNIC)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Passenger.PassengerCNIC)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Passenger.PassengerCNIC)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Train.TrainName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Train.TrainName)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-default" />
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <span class="btn btn-default">
+            @Html.ActionLink("Back to List", "Index")
+        </span>
+    </div>
+
+</div>
+<footer class="footer text-center"> 2018 &copy; E-Ticket </footer>
+</div>

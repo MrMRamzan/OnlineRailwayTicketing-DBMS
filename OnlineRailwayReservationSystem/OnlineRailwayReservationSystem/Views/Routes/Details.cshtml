@@ -1,0 +1,58 @@
+﻿@model OnlineRailwayReservationSystem.Models.Route
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Route</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RouteSource)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RouteSource)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RouteDestination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RouteDestination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalDistance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalDistance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfStations)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfStations)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Train.TrainName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Train.TrainName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

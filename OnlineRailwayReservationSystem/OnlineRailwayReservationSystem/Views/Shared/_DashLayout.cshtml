@@ -1,0 +1,152 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Online Railway Reservation System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="@Url.Content("~/Content/landing.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/sidebar-nav.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/jquery.toast.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/morris.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/chartist.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/chartist-plugin-tooltip.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/animate.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/default.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/animate.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/app.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="@Url.Content("~/Content/dataTables.bootstrap4.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/sb-admin.css")" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body style="padding-top: 0px; padding-bottom: 0px">
+
+
+
+    <!-- ============================================================== -->
+    <!-- Preloader -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Wrapper -->
+    <!-- ============================================================== -->
+    <div id="wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li>
+                        <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
+                            <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a>
+                        </form>
+                    </li>
+                    <li>
+                        <a class="profile-pic" href="#"><b class="hidden-xs">HELLO ADMIN</b></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav slimscrollsidebar">
+                <div class="sidebar-head">
+                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <a href="/Home" class="hide-menu">Admin</a></h3>
+                </div>
+                <ul class="nav" id="side-menu">
+                    <li style="padding: 70px 0 0;">
+                        <a href="/Home/Dashboard" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="../AdminUsers" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Manage Users</a>
+                    </li>
+                    <li>
+                        <a href="../Passengers" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Manage Passengers</a>
+                    </li>
+                    <li>
+                        <a href="../Trains" class="waves-effect"><i class="fa fa-train fa-fw" aria-hidden="true"></i>Manage Trains</a>
+                    </li>
+                    <li>
+                        <a href="../Stations" class="waves-effect"><i class="fa fa-globe fa-fw" aria-hidden="true"></i>Manage Stations</a>
+                    </li>
+                    <li>
+                        <a href="../Coaches" class="waves-effect"><i class="fa fa-cube fa-fw" aria-hidden="true"></i>Manage Coaches</a>
+                    </li>
+                    <li>
+                        <a href="../Tickets" class="waves-effect"><i class="fa fa-ticket fa-fw" aria-hidden="true"></i>Manage Tickets</a>
+                    </li>
+                    <li>
+                        <a href="../Routes" class="waves-effect"><i class="fa fa-road fa-fw" aria-hidden="true"></i>Manage Routes</a>
+                    </li>
+                    <li>
+                        <a href="../Complains" class="waves-effect"><i class="fa fa-comment fa-fw" aria-hidden="true"></i>Manage Complains</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+        
+        <div>
+            @RenderBody()
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page Content -->
+        <!-- ============================================================== -->
+    </div>
+
+
+
+
+
+    <script src="@Url.Content("~/Scripts/jquery.appear.js")"></script>
+    <script src="@Url.Content("~/Scripts/chartist-plugin-tooltip.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/app.plugin.js")"></script>
+    <script src="@Url.Content("~/Scripts/smoothscroll.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.slimscroll.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/app.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.dataTables.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.counterup.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.waypoints.js")"></script>
+    <script src="@Url.Content("~/Scripts/waves.js")"></script>
+    <script src="@Url.Content("~/Scripts/chartist.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.easing.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/sidebar-nav.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/chartist-plugin-tooltip.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.sparkline.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/custom.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/dashboard1.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.toast.js")"></script>
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

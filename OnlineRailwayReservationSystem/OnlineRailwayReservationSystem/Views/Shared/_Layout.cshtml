@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Online Railway Reservation System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="@Url.Content("~/Content/landing.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/animate.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/app.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="@Url.Content("~/Content/dataTables.bootstrap4.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/sb-admin.css")" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("E-Ticket", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+
+                    @if (!User.IsInRole("A"))
+                    {
+                        <li>@Html.ActionLink("Train Timing", "Timing", "Home")</li>
+                        <li>@Html.ActionLink("Book Ticket", "BookTicket", "Home")</li>
+                        <li>@Html.ActionLink("Complain", "Create", "Complains")</li>
+                    }
+                    
+
+                    @if (User.IsInRole("A"))
+                    {
+                        <li>@Html.ActionLink("Dashboard", "Dashboard", "Home")</li>
+                    }
+                    
+                    
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <div>
+        <hr />
+        <!-- footer -->
+        <footer id="footer">
+            <div class="bg-primary text-center">
+                <div class="container wrapper">
+                    <div">
+                        We are the Pakistan's largest railway network. Come and book with us.
+                    </div>
+                </div>
+            </div>
+            <div class="bg-dark dker wrapper">
+                <div class="container text-center m-t-lg">
+                    <div class="row m-t-xl m-b-xl">
+                        <div class="col-sm-4" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
+                            <i class="fa fa-map-marker fa-3x icon-muted"></i>
+                            <h5 class="text-uc m-b m-t-lg">Find Us</h5>
+                            <p class="text-sm">
+                                Computer Science Department <br>
+                                University of Engineering & Technology, Lahore.
+                            </p>
+                        </div>
+                        <div class="col-sm-4" data-ride="animated" data-animation="fadeInUp" data-delay="600">
+                            <i class="fa fa-envelope-o fa-3x icon-muted"></i>
+                            <h5 class="text-uc m-b m-t-lg">Mail Us</h5>
+                            <p class="text-sm"><a href="mailto:hey@example.com">info@example.com</a></p>
+                        </div>
+                        <div class="col-sm-4" data-ride="animated" data-animation="fadeInRight" data-delay="900">
+                            <i class="fa fa-globe fa-3x icon-muted"></i>
+                            <h5 class="text-uc m-b m-t-lg">Join Us</h5>
+                            <p class="text-sm">Send your resume to <br><a href="mailto:hey@example.com">recruit@example.com</a></p>
+                        </div>
+                    </div>
+                    <div class="m-t-xl m-b-xl">
+                        <p>
+                            <a href="#" class="btn btn-icon btn-rounded btn-facebook bg-empty m-sm"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="btn btn-icon btn-rounded btn-twitter bg-empty m-sm"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="btn btn-icon btn-rounded btn-gplus bg-empty m-sm"><i class="fa fa-google-plus"></i></a>
+                        </p>
+                        <p>
+                            <a href="#content" data-jump="true" class="btn btn-icon btn-rounded btn-dark b-dark bg-empty m-sm text-muted"><i class="fa fa-angle-up"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="@Url.Content("~/Scripts/jquery.appear.js")"></script>
+    <script src="@Url.Content("~/Scripts/chartist-plugin-tooltip.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/app.plugin.js")"></script>
+    <script src="@Url.Content("~/Scripts/smoothscroll.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.slimscroll.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/app.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.dataTables.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.counterup.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.waypoints.js")"></script>
+    <script src="@Url.Content("~/Scripts/waves.js")"></script>
+    <script src="@Url.Content("~/Scripts/chartist.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.easing.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/sidebar-nav.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/chartist-plugin-tooltip.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.sparkline.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/custom.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/dashboard1.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.toast.js")"></script>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

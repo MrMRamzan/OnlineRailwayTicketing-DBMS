@@ -1,0 +1,82 @@
+﻿@model OnlineRailwayReservationSystem.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SrcStation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SrcStation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DstStation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DstStation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllocatedSeat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllocatedSeat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllocatedBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllocatedBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminUser.UserCNIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminUser.UserCNIC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.PassengerCNIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.PassengerCNIC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Train.TrainName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Train.TrainName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TicketID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aab925cf99d5450a901b5c668db49ab4" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="Model.Account" Width="1.5" PointX="8" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AdminUser" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Coach" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Complain" Width="1.5" PointX="8" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Passenger" Width="1.5" PointX="5.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Route" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Seat" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Station" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagram" Width="1.5" PointX="10.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Ticket" Width="1.5" PointX="8" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Train" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TrainStation" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__Account__UserID__634EBE90" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Complain__UserID__607251E5" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Passenger__UserI__44CA3770" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Ticket__Customer__4B7734FF" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Coach__TrainID__56E8E7AB" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Seat__CoachID__59C55456" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Ticket__Customer__4C6B5938" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Route__TrainID__5D95E53A" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Seat__TrainID__5AB9788F" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Station__TrainID__503BEA1C" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__TrainStat__Stati__540C7B00" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Ticket__TrainID__4D5F7D71" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__TrainStat__Train__531856C7" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

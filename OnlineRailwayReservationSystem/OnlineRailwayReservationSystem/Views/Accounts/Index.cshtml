@@ -1,0 +1,71 @@
+﻿@model IEnumerable<OnlineRailwayReservationSystem.Models.Account>
+
+@{
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Manage Accounts";
+}
+
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+
+                <h4 class="page-title">@ViewBag.Title</h4>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- table -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    @*<span class="btn btn-default">@Html.ActionLink("Add New User", "Create")</span>*@
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ACCOUNT TITLE</th>
+                                    <th>ACCOUNT TYPE</th>
+                                    <th>STATUS</th>
+                                    <th>CNIC</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AccountTitle)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AccountType)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Status)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AdminUser.UserCNIC)
+                                        </td>
+                                        <td>
+                                            <span class="btn btn-default">@Html.ActionLink("Update", "Edit", new { id = item.AccountID })</span>
+                                            <span class="btn btn-danger">@Html.ActionLink("Delete", "Delete", new { id = item.AccountID })</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+    <footer class="footer text-center"> 2018 &copy; E-Ticket </footer>
+</div>

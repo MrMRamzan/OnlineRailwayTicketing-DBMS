@@ -1,0 +1,116 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Train Timing";
+}
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- table -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+                <div class="white-box">
+                    <!-- ============================================================== -->
+                    <!-- table -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div>
+                                <p>
+                                    @using (Html.BeginForm())
+                                    {
+                                    <p style="float:right">
+                                        Search: @Html.TextBox("SearchString")
+                                        <input type="submit" value="Filter" />
+                                    </p>
+                                    }
+                                <div class="table-responsive">
+
+                                    @foreach (var item in ViewBag.searchedTrain)
+                                    {
+                                        <h3>Info</h3>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>TRAIN NAME</th>
+                                                    <th>ARRIVAL DAY</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>@item.TrainName</td>
+                                                    <td>@item.AvailableDay</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <hr />
+                                        foreach (var item2 in ViewBag.Route)
+                                        {
+                                            if (item.TrainID == item2.TrainID)
+                                            {
+                                                <h3>Train Route</h3>
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>SOURCE</th>
+                                                            <th>DESTINATION</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>@item2.RouteSource</td>
+                                                            <td>@item2.RouteDestination</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <hr />
+                                                foreach (var item3 in ViewBag.Station)
+                                                {
+
+                                                    if (item3.TrainID == item.TrainID)
+                                                    {
+                                                        <h3>Station</h3>
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>STATION NAME</th>
+                                                                    <th>ARRIVAL TIME</th>
+                                                                    <th>DEPARTURE TIME</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>@item3.StationName</td>
+                                                                    <td>@item3.TrainArrivalTime</td>
+                                                                    <td>@item3.TrainDepartureTime</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <hr />
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- chat-listing & recent comments -->
+                    <!-- ============================================================== -->
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</div>

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<OnlineRailwayReservationSystem.Models.Train>
+
+@{
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Manage Trains";
+}
+
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+
+                <h4 class="page-title">@ViewBag.Title</h4>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- table -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    <span class="btn btn-default">@Html.ActionLink("Add New Train", "Create")</span>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>TRAIN NAME</th>
+                                    <th>AVIALABLE DAYS</th>
+                                    <th>TOTAL COACHES</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.TrainName)</td>
+                                        <td class="txt-oflo">@Html.DisplayFor(modelItem => item.AvailableDay)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.TotalNumberOfCoach)</td>
+                                        <td>
+                                            <span class="btn btn-default">@Html.ActionLink("Update", "Edit", new { id = item.TrainID })</span>
+                                            <span class="btn btn-danger">@Html.ActionLink("Delete", "Delete", new { id = item.TrainID })</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+    <footer class="footer text-center"> 2018 &copy; E-Ticket </footer>
+</div>

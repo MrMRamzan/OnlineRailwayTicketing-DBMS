@@ -1,0 +1,50 @@
+﻿@model OnlineRailwayReservationSystem.Models.Coach
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Coach</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalNumberOfSeat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalNumberOfSeat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalNumberOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalNumberOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Train.TrainName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Train.TrainName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CoachID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

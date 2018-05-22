@@ -1,0 +1,75 @@
+﻿@model IEnumerable<OnlineRailwayReservationSystem.Models.Route>
+
+@{
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Manage Routes";
+}
+
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+
+                <h4 class="page-title">@ViewBag.Title</h4>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- table -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    <span class="btn btn-default">@Html.ActionLink("Add New Route", "Create")</span>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>SOURCE</th>
+                                    <th>DESTINATION</th>
+                                    <th>DISTANCE</th>
+                                    <th>NUMBER OF STATIONS</th>
+                                    <th>TRAIN NAME</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.RouteSource)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.RouteDestination)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TotalDistance)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NumberOfStations)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Train.TrainName)
+                                        </td>
+                                        <td>
+                                            <span class="btn btn-default">@Html.ActionLink("Update", "Edit", new {  })</span>
+                                            <span class="btn btn-danger">@Html.ActionLink("Delete", "Delete", new { })</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+    <footer class="footer text-center"> 2018 &copy; E-Ticket </footer>
+</div>
